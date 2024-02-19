@@ -1,0 +1,31 @@
+server:
+  port: 9394
+
+spring:
+  datasource:
+    username: root
+    password: Alex1995!
+    url: jdbc:mysql://rangshen.mysql.rds.aliyuncs.com:3306/lakeside_hotel?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+      file-size-threshold: 2KB
+
+  security:
+    jwt:
+      secret-key: db0sw8hFxfg++8Y6XyecXiuxnDG53eQj2YA/SCFgVoE=
+      expire-length: 3600000
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
